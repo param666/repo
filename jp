@@ -1,0 +1,71 @@
+'''''''''''''''''''''''''''''''''
+JAVA BUILD AUTOMATION
+'''''''''''''''''''''''''''''''''
+
+
+Interpreted --
+
+    Input in High Level Language > Interpreter > Converts to Machine Lang > CPU
+    Examples: shell scripts, php
+
+Compiled --
+
+    Program is written > Program is Compiled > Get Executable > Run Exe > see output
+    Example: Java, Android, C, C++
+
+
+Java Build:
+   Developers Code --> program.java  ---> compiler --> creates program.class ---> From program.class create program.jar ---> execute program.jar
+
+
+
+
+
+(A) - Simple Java Compilation using Jenkins & Core Compilation Commands
+
+Prerequisites: Jenkins should have git plugin and installed with Java compiler.
+yum install java-devel  # one time task in Jenkins Server
+
+Repo Reference: https://github.com/prasanjit-/hello-java
+
+#Build Steps:
+echo "Compiling ... "
+javac HelloWorld.java
+echo "Execution ..."
+java HelloWorld
+jar cvfe HelloWorld.jar HelloWorld *.class
+echo "============================"
+#Execution:
+java -jar HelloWorld.jar
+echo "============================"
+
+
+(B) - Simple Java Compilation using Jenkins & Maven
+
+Prerequisites: Jenkins should have - Maven Integration plugin and maven installed in host.
+# yum install maven # one time task in Jenkins Server
+
+Repo Reference: https://github.com/prasanjit-/hello-java-maven
+
+#Build Steps:
+# export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk/'
+# mvn package
+
+(C) - Simple Java Compilation using Jenkins & Ant
+
+Prerequisites: Jenkins should have - Ant Integration plugin and ant installed in host.
+# yum install ant # one time task in Jenkins Server
+
+Repo Reference: https://github.com/prasanjit-/hello-java-ant
+
+
+
+#Build Steps:
+# export JAVA_HOME='/usr/lib/jvm/java-1.8.0-openjdk/'
+# ant compile jar run
+
+
+
+
+
+ssh://user@other.host.com/~/repos_path/reponame.git
